@@ -47,7 +47,7 @@ export async function POST(req: Request) {
         "Cache-Control": "no-store",
       },
     });
-  } catch (err: any) {
+  } catch (err) {
     console.error(err);
     return new Response("TTS error", { status: 500 });
   }

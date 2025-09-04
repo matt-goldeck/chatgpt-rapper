@@ -21,16 +21,14 @@ export default function Typewriter({
     // Reset on new text
     setDisplayed("");
 
-    // Split text into *grapheme clusters* to avoid breaking emoji/accents
+    // Split text into grapheme clusters to avoid breaking emoji/accents
     // Prefer Intl.Segmenter if available; fall back to Array.from (code points)
     let chars: string[];
-    // @ts-ignore: TS doesn't know Segmenter exists in all runtimes
-    if (typeof Intl !== "undefined" && (Intl as any).Segmenter) {
-      // @ts-ignore
+    if (typeof Intl !== "undefined" && (Intl).Segmenter) {
       const seg = new Intl.Segmenter(undefined, { granularity: "grapheme" });
-      chars = Array.from(seg.segment(text), (s: any) => s.segment as string);
+      chars = Array.from(seg.segment(text), (s) => s.segment as string);
     } else {
-      // Handles surrogate pairs; still better than text[i]
+      // Handles surrogate pairs
       chars = Array.from(text);
     }
 

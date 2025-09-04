@@ -51,7 +51,7 @@ export default function RapForm() {
             </option>
           ))}
         </select>
-        <p className="text-xs text-zinc-500">What's the flavor?</p>
+        <p className="text-xs text-zinc-500">What&apos;s the flavor?</p>
       </div>
 
       <div className="space-y-1">
@@ -91,7 +91,7 @@ export default function RapForm() {
           placeholder="e.g. peeling potatoes, your cat's allergies, etc"
           className="w-full rounded-lg border border-zinc-300/70 bg-white px-3 py-2 text-sm outline-none transition placeholder:text-zinc-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30 dark:border-zinc-700 dark:bg-zinc-950"
         />
-        <p className="text-xs text-zinc-500">What's the verse about?</p>
+        <p className="text-xs text-zinc-500">What&apos;s the verse about?</p>
       </div>
 
       <button
