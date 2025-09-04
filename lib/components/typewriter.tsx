@@ -23,7 +23,7 @@ export default function Typewriter({
 
     // Split into grapheme clusters (handles emojis, accents, etc.)
     let chars: string[];
-    if (typeof Intl !== "undefined" && (Intl as any).Segmenter) {
+    if (typeof Intl !== "undefined" && (Intl).Segmenter) {
       const seg = new Intl.Segmenter(undefined, { granularity: "grapheme" });
       chars = Array.from(seg.segment(text), (s) => s.segment as string);
     } else {
